@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Página de inicio</title>
+</head>
+<body>
+    <h1>Productos a la venta</h1>
+    <form method="POST" action="{% url 'comprar' %}">
+        {% csrf_token %}
+        <ul>
+            {% for producto in productos %}
+                <li>Articulo: {{ producto.nombre }} - Precio: {{ producto.precio }}</li>
+                <input type="hidden" name="producto_ids[]" value="{{ producto.id }}">
+                <input type="number" name="cantidades[]" placeholder="Cantidad" required>
+            {% endfor %}
+        </ul>
+        <button type="submit">Comprar</button>
+    </form>
+</body>
+</html>

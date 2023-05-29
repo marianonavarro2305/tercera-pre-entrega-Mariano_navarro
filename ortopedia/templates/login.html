@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Iniciar sesión</title>
+</head>
+<body>
+    <h1>Iniciar sesión</h1>
+    <form method="POST" action="{% url 'login' %}">
+        {% csrf_token %}
+        <h2>Iniciar sesión</h2>
+        <input type="email" name="email" placeholder="Correo electrónico" required><br>
+        <input type="password" name="password" placeholder="Contraseña" required><br>
+        <button type="submit">Iniciar sesión</button>
+    </form>
+</body>
+</html>

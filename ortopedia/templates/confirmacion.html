@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Confirmación de compra</title>
+</head>
+<body>
+    <h1>¡Compra realizada con éxito!</h1>
+    {% if ultima_compra %}
+        <p>Producto: {{ ultima_compra.producto.nombre }}</p>
+        <p>Cantidad: {{ ultima_compra.cantidad }}</p>
+        <p>Monto: {{ ultima_compra.monto }}</p>
+    {% else %}
+        <p>No se encontraron compras recientes.</p>
+    {% endif %}
+</body>
+</html>
